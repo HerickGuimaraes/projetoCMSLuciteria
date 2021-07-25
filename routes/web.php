@@ -81,7 +81,7 @@ Route::get('/terms-of-service', function () {
 });
 
 Route::get('/forum', function(){
-    return view('site.forum');
+    return view('site.layoutprod');
 });
 //admin
 

@@ -100,26 +100,6 @@
       </div>
    </div>
 
-<script>
-windows.onload = function(){
-   let ctx = document.getElementById('pagePie').getContext('2d');
-   windows.pagePie = new Chart(ctx, {
-      type:'pie',
-      data:{
-         datasets:[{
-            data:{!! $pageValues !!},
-            backgroundColor:'#0000FF'
-         }],
-         labels:{!! $pageLabels !!}
-      },
-      options:{
-         responsive:true,
-         legend:{
-            display:false
-         }
-      }
-   });
-}    
-</script>  
+
    
 @endsection
