@@ -38,7 +38,7 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return <void></void>
      */
     public function __construct()
     {
@@ -46,8 +46,8 @@ class RegisterController extends Controller
     }
 
     public function index(){
-        
-        return view('admin.cadastro');
+        $data=[];
+        return view('admin.cadastro', $data);
     }
     public function register(Request $request){
         $data = $request->only([
@@ -60,14 +60,14 @@ class RegisterController extends Controller
             'estado',
             'cep',
             'complemento',
-            'password',
-            'password_confirmation'
+            'password'
+            
         ]);
         
         $validator = $this->validator($data);
         
         if($validator->fails()) {
-            
+             
             return redirect()->route('cadastro')
             ->withErrors($validator)->withInput();
             
@@ -103,8 +103,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:3', 'confirmed'],
-            'cpf' =>['required', 'string', 'max:12', 'unique:users'],
+            'password' => ['required', 'string', 'min:3'],
+            'cpf' =>['required', 'string', 'max:12'],
             'logadouro' =>['required','string'],
             'numero' =>['required', 'string'],
             'cidade' =>['required', 'string'],

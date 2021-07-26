@@ -6,24 +6,37 @@
     <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
 </head>
 <body>
-    <nav class="navbar navbar-light navbar-expand-md bg-light px-5 pr-5 mb-5">
-        <a href="#" class="navbar-brand"></a>
-        
+    <div class="container-fluid justify-content-center">
+    <h1>titulo pag</h1>
+    </div>
+    <nav class="navbar navbar-light bg-light justify-content-center " style="background-color: #fffff, background-text: #000000">
+        <ul class="nav justify-content-center">
+            @foreach($front_menu as $menuslug=>$menutitle)
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{$menuslug}}" >{{$menutitle}}</a>
+            </li>
+            @endforeach
+        </tr>  
     </nav>
+    
 <div class="container">
     <div class="row">
     <h2>Cadastro</h2><br><br>
 
-    <form action="" method="post" class="form-row">
+    <form action="{{''}}" method="post" class="form-row">
         @csrf
         <div class="row">
         <div class="from-group col-md-8 mb-4">
             <input type="text" name="nome" class="form-control" placeholder="Nome">
         </div>
         <div class="from-group col-md-4 mb-4">
-            <input type="text" name="cpf" class="form-control" placeholder="CPF">
+            <input type="number" name="cpf" class="form-control"  placeholder="CPF" onkeydown="javascript: fMasc(this, mCPF);">
         </div>
         <div class="from-group col-md-6 mb-4">
             <input type="email" name="email" class="form-control" placeholder="E-mail">

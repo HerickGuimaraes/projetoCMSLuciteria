@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageControlle;
 use App\Http\Controllers\PainelController;
+use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingControler;
 use App\Http\Controllers\site\PageController;
@@ -104,6 +106,10 @@ route::put('perfilsalve', [ProfileController::class, 'save'])->name('perfil.salv
 
 route::get('configuracoes', [SettingControler::class,'index'])->name('configuracoes');
 route::put('configuracoessalve', [SettingControler::class, 'save'])->name('configuracoes.salve');
+
+Route::resource('produtos', ProdutoController::class);
+
+Route::resource('categoria', CategoriaController::class);
 
 Route::resource('pages', PageControlle::class);
 });

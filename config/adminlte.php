@@ -260,6 +260,19 @@ return [
            
         ],
         [
+            'text'        => 'Meus Produtos',
+            'url'         => 'painel/produtos',
+            'icon'        => 'far fa-fw fa-file',
+            'can'         =>  'edit-users'
+           
+        ],
+        [
+            'text'        => 'Minhas Categorias',
+            'url'         => 'painel/categoria',
+            'icon'        => 'fas fa-fw fa-copy',
+           
+        ],
+        [
             'text'        => 'Meus Usuarios',
             'url'         => 'painel/users',
             'icon'        => 'far fa-fw fa-file',
