@@ -274,9 +274,14 @@ return [
         ],
         [
             'text' => 'Perfil',
-            'url'  => 'painel/perfil',
+            
             'icon' => 'fas fa-fw fa-user',
             'submenu' =>[
+                [
+                    'text' => 'Meu Perfil',
+                    'url'  => 'painel/perfil',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
                 [
                     'text' => 'logout',
                     'url' => 'painel/logout'
