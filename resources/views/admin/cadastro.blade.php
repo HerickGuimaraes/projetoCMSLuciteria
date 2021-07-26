@@ -33,7 +33,7 @@
             <input type="password" name="password" class="form-control" placeholder="Senha">
         </div>
         <div class="from-group col-md-6  mb-4">
-            <input type="text" name="endereco" class="form-control" placeholder="Endereço">
+            <input type="text" name="logadouro" class="form-control" placeholder="Endereço">
         </div>
         <div class="from-group col-md-2  mb-4">
             <input type="text" name="numero" class="form-control" placeholder="Numero">

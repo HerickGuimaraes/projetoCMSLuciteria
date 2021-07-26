@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             '/' => 'Home'
         ];
         $pages = Page::all();
-        foreach($pages as $page){
+        foreach ($pages as $page) {
             $frontmenu[$page['slug']] = $page['title'];
         }
 
@@ -40,8 +40,8 @@ class AppServiceProvider extends ServiceProvider
         //conf
         $config = [];
         $settings = Setting::all();
-        foreach($settings as $setting){
-            $config[$setting['nome'] ] = $setting['content'];
+        foreach ($settings as $setting) {
+            $config[$setting['nome']] = $setting['content'];
         }
         view()->share('front_config', $config);
     }

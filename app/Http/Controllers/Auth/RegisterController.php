@@ -63,11 +63,17 @@ class RegisterController extends Controller
             'password',
             'password_confirmation'
         ]);
+        
         $validator = $this->validator($data);
-
+        
         if($validator->fails()) {
-            return redirect()->route('cadastro')->withErrors($validator)->withInput();
+            
+            return redirect()->route('cadastro')
+            ->withErrors($validator)->withInput();
+            
         }
+        
+        
         $user = $this->create($data);
         if($user && $user->id) {
             $id = $user->id;
@@ -98,12 +104,12 @@ class RegisterController extends Controller
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:3', 'confirmed'],
-            'cpf' =>['required', 'string', 'max:11', 'unique:users'],
+            'cpf' =>['required', 'string', 'max:12', 'unique:users'],
             'logadouro' =>['required','string'],
             'numero' =>['required', 'string'],
             'cidade' =>['required', 'string'],
             'estado' =>['required', 'string'],
-            'cep' =>['required', 'max:8'],
+            'cep' =>['required', 'max:12'],
             'complemento' => ['string']
         ]);
     }

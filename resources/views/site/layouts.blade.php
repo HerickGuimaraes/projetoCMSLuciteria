@@ -231,7 +231,7 @@
 					      
 
 
-                        <a href="https://www.facebook.com/luciteria/" target="_blank" class="sqs-svg-icon--wrapper facebook">
+                        <a href="https://www.facebook.com/" target="_blank" class="sqs-svg-icon--wrapper facebook">
                             <div>
                             <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
                                 <use class="sqs-use--icon" xlink:href="#facebook-icon"></use>
@@ -240,7 +240,7 @@
                             </div>
                         </a>
 
-                        <a href="https://www.youtube.com/channel/UCQXe9YzLYRSf5CJ9vOWONxw" target="_blank" class="sqs-svg-icon--wrapper youtube-unauth">
+                        <a href="https://www.youtube.com/" target="_blank" class="sqs-svg-icon--wrapper youtube-unauth">
                             <div>
                             <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
                                 <use class="sqs-use--icon" xlink:href="#youtube-unauth-icon"></use>
@@ -253,7 +253,27 @@
 					</div>
 					  
 					
-					<div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1613096797018" id="footerBlock"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1609807955307_4765"><div class="sqs-block-content"><div data-bid="82356" data-url="https://app.gatherup.com"><script src="https://widget.reviewability.com/js/badgeAdv.min.js" async></script></div><script class="json-ld-content" type="application/ld+json"></script></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1597927788518_5201"><div class="sqs-block-content"><hr /></div></div></div></div></div>
+					<div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1613096797018" id="footerBlock">
+            <div class="row sqs-row">
+              <div class="col sqs-col-12 span-12">
+                <div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1609807955307_4765">
+                  <div class="sqs-block-content">
+                    <div data-bid="82356" data-url="https://app.gatherup.com">
+                      <script src="https://widget.reviewability.com/js/badgeAdv.min.js" async>
+                      </script>
+                    </div>
+                    <script class="json-ld-content" type="application/ld+json">
+                    </script>
+                  </div>
+                </div>
+                <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1597927788518_5201">
+                  <div class="sqs-block-content">
+                    <hr />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 				</footer>
 			</div><!-- / footerWrapper -->
 
