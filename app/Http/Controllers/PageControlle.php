@@ -50,10 +50,10 @@ class PageControlle extends Controller
             'body',
         ]);
        
-        $data = Str::slug($data['title'], '-');
+        $data['slug'] = Str::slug($data['title'], '-');
         $validator = Validator::make($data, [
             'title'=>['required','string','max:100'],
-            'slug'=>['required', 'string', 'max:100', 'uniqued:pages'],
+            'slug'=>['required', 'string', 'max:100', 'unique:pages'],
             'body'=>['string']
         ]);
         

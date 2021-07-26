@@ -22,6 +22,8 @@ class User extends Authenticatable
         'nome',
         'email',
         'password',
+        'admin',
+        'cpf'
     ];
 
     /**
@@ -45,5 +47,8 @@ class User extends Authenticatable
 
     public function getNome(){
         return $this->nome;
+    }
+    public function endereco(){
+        return $this->hasMAny(Endereco::class,'user_id', 'id');
     }
 }

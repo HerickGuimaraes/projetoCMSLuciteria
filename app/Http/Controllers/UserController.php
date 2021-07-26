@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Endereco;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +24,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(10);
+        $enderecos = Endereco::all();
         $loggedId = intval(Auth::id());
 
         return view('admin.usuarios',[
             'users' => $users,
-            'loggedId' => $loggedId
+            'loggedId' => $loggedId,
+            'enderecos' => $enderecos
         ]);
     }
 

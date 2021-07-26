@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Endereco;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -52,6 +53,13 @@ class RegisterController extends Controller
         $data = $request->only([
             'nome',
             'email',
+            'cpf',
+            'logadouro',
+            'numero',
+            'cidade',
+            'estado',
+            'cep',
+            'complemento',
             'password',
             'password_confirmation'
         ]);
@@ -61,6 +69,19 @@ class RegisterController extends Controller
             return redirect()->route('cadastro')->withErrors($validator)->withInput();
         }
         $user = $this->create($data);
+        if($user && $user->id) {
+            $id = $user->id;
+            $endereco = new Endereco();
+            $endereco->create([
+            'logadouro' => $data['logadouro'],
+            'numero' => $data['numero'],
+            'cidade' => $data['cidade'],
+            'estado' => $data['estado'],
+            'cep' => $data['cep'],
+            'complemento' => $data['complemento'],
+            'user_id' => $id
+            ]);
+        }
         Auth::login($user);
         return redirect()->route('painel');
     }
@@ -77,6 +98,13 @@ class RegisterController extends Controller
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:3', 'confirmed'],
+            'cpf' =>['required', 'string', 'max:11', 'unique:users'],
+            'logadouro' =>['required','string'],
+            'numero' =>['required', 'string'],
+            'cidade' =>['required', 'string'],
+            'estado' =>['required', 'string'],
+            'cep' =>['required', 'max:8'],
+            'complemento' => ['string']
         ]);
     }
 
@@ -88,10 +116,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'nome' => $data['nome'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $data['password'] = Hash::make($data['password']);
+        return User::create($data);
     }
 }
