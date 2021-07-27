@@ -9,5 +9,5 @@ class visitor extends Model
 {
     use HasFactory;
 
-    public $timestanp = false;
+    public $timestamp = false;
 }
