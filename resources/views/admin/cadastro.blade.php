@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container-fluid justify-content-center">
-    <h1>titulo pag</h1>
+    <h1></h1>
     </div>
     <nav class="navbar navbar-light bg-light justify-content-center " style="background-color: #fffff, background-text: #000000">
         <ul class="nav justify-content-center">

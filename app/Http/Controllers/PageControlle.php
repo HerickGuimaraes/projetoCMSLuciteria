@@ -124,7 +124,7 @@ class PageControlle extends Controller
                 $validator = Validator::make($data,[
                     'title' => ['required', 'string', 'max:100'],
                     'body' =>['string'],
-                    'slug' =>['required', 'string', 'max:100','uniqued:pages']
+                    'slug' =>['required', 'string', 'max:100','unique:pages']
                 ]);
             }else{
                 $validator = Validator::make($data,[

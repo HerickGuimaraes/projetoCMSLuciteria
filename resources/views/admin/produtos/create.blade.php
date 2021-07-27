@@ -27,8 +27,8 @@
                 <div class="form-group row">      
                     <label class="col-sm-0 col-form-label"></label>
                     <div class="col-sm-10">
-                    <input type="text" name="title" value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror" placeholder="Titulo" >
-                 </div>           
+                        <input type="text" name="title" value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror" placeholder="Titulo" >
+                    </div>           
                 </div>
                 <div class="form-group row">       
                     <label class="col-sm-0 col-form-label"></label>

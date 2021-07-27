@@ -234,7 +234,7 @@
 
             <div id="footerWrapper">
 				<footer id="footer">
-			   
+			   @yield('footer')
 					  
 					<div id="sqs-social" class="social-links sqs-svg-icon--list" data-content-field="connected-accounts">
 					      

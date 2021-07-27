@@ -17,6 +17,7 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('nome');
             $table->text('content')->nullable();
+            $table->string('foto')->nullable();
         });
     }
 

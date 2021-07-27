@@ -14,7 +14,12 @@ class CreatePedidosTable extends Migration
     public function up()
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->datetime('datapedido');
+            $table->string("status", 4);
+            $table->unsignedInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')
+            ->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
