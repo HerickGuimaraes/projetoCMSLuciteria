@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Nova pagina')
+@section('title', 'Novo Produto')
 
 @section('content_header')
 
-    <h1>Nova Pagina</h1>
+    <h1>Novo Produto</h1>
 
 @endsection
 
@@ -21,45 +21,55 @@
     @endif
     <div class="card">
         <div class="card-body">
-            <form action="{{route('pages.store')}}" method="POST"class="form-horizontal">
+            <form action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 
                 @csrf
                 <div class="form-group row">      
-                    <label class="col-sm-0 col-form-label"></label>
+                    
                     <div class="col-sm-10">
-                        <input type="text" name="title" value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror" placeholder="Titulo" >
+                        <input type="text" name="nome" value="" class="form-control @error('title') is-invalid @enderror" placeholder="Titulo do produto" >
                     </div>           
                 </div>
-                <div class="form-group row">       
-                    <label class="col-sm-0 col-form-label"></label>
-                    <div class="col-sm-10">
-                        <textarea name="body" placeholder="Conteudo da Pagina" class="form-control bodyfield">{{old('body')}}</textarea>
-                 
-                    </div>         
-                
                 <div class="form-group row">
-                    <label class="col-sm-9 col-form-label"></label>
-                    <div class="col-sm-3">
+                <div class="input-group row col-sm-10" >
+                    <span class="input-group-text">R$</span>
+                    <input type="text" class="form-control" name="valor" aria-label="Amount (to the nearest dollar)" placeholder="Valor">
+                </div>  
+                </div> 
+                <div class="form-group row">       
+                    
+                    <div class="col-sm-10">
+                        <textarea name="descricao" placeholder="Descrição do Produto" class="form-control bodyfield"></textarea>
+                    </div> 
+                </div> 
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="file" name="foto" class="input-control" id="image">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <select  placeholder="categorias" class="form-select">
+                            <option selected>Escolha uma categoria</option>
+                            @foreach($categorias as $cat)
+                            <option name="categoria_id">{{$cat->categoria}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    
+                    <div class="col-sm-8">
                     <input type="submit" name="Cadatro" class="btn btn-success" value="Criar">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-<script>
-    tinymce.init({
-        selector:'textarea.bodyfield',
-        height:300,
-        menubar:false,
-        plugins:['link','table','image','autoresize','list'],
-        toolbar:'undo redo | formatselect | bold italic backcolor | alingleft alingcenter alingright alingjustify| table | link image | bullist numlist',
-        content_css:[
-            '{{asset('css/content.css')}}'
-        ],
-        images_upload_url:'{{route('imageupload')}}',
-        images_upload_credentials:true,
-        convert_urls:false
-    });
-</script>
+    
+    <script>
+            images_upload_url:'{{route('imageupload')}}',
+            images_upload_credentials:true,
+            convert_urls:false
+    </script>
 @endsection

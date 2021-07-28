@@ -27,8 +27,26 @@
                 <div class="form-group row">      
                     <label class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-8">
-                    <input type="text" name="title" value="{{$page->title}}" class="form-control" >
-                 </div>           
+                        <input type="text" name="title" value="{{$page->title}}" class="form-control" >
+                    </div>           
+                </div>
+                <div class="form-group row">      
+                    <label class="col-sm-2 col-form-label">SubTitulo</label>
+                    <div class="col-sm-8">
+                        <textarea type="text" name="subtitle"  class="form-control" >{{$page->subtitle}}</textarea>
+                    </div>           
+                </div>
+                <div class="form-group row">      
+                    <label class="col-sm-2 col-form-label">Apresentação</label>
+                    <div class="col-sm-8">
+                        <textarea type="text" name="subtitle1" class="form-control" >{{$page->subtitle1}}</textarea>
+                    </div>           
+                </div>
+                <div class="form-group row">      
+                    <label class="col-sm-2 col-form-label">Complemento</label>
+                    <div class="col-sm-8">
+                        <textarea type="text" name="subtitle2"  class="form-control" >{{$page->subtitle2}}</textarea>
+                    </div>           
                 </div>
                 <div class="form-group row">       
                     <label class="col-sm-2 col-form-label">Conteudo</label>
@@ -36,7 +54,7 @@
                         <textarea name="body" class="form-control bodyfield">{{$page->body}}</textarea>
                  
                     </div>         
-                
+                </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
@@ -56,9 +74,9 @@
         plugins:['link','table','image','autoresize','list'],
         toolbar:'undo redo | formatselect | bold italic backcolor | alingleft alingcenter alingright alingjustify| table | link image | bullist numlist',
         content_css:[
-            '{{asset('css/content.css')}}'
+            "{{asset('css/content.css')}}"
         ],
-        images_upload_url:'{{route('imageupload')}}',
+        images_upload_url:"{{route('imageupload')}}",
         images_upload_credentials:true,
         convert_urls:false
     });

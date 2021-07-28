@@ -18,8 +18,6 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('subtitle')->nullable();
-            $table->string('subtitle1')->nullable();
-            $table->string('subtitle2')->nullable();
             $table->text('body')->nullable();
             $table->unsignedInteger('categoria_id')->unsigned()->nullable();
             $table->foreign("categoria_id")->references("id")

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CategoriaController extends Controller
 {
@@ -14,7 +15,10 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        return view('admin.categoria');
+        $categorias = Categoria::paginate(8);
+        return view('admin.categoria', [
+            'categorias' => $categorias
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categoria.create');
     }
 
     /**
@@ -35,7 +39,25 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'categoria'
+        ]);
+        
+        $validator = Validator::make($data, [
+            'categoria' => ['string']
+        ]);
+        if($validator->fails()){
+            return redirect()->route('categoria.index')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        
+        $categorias = new Categoria;
+        $categorias->categoria->$data['categoria'];
+        $categorias->save();
+
+
+        return redirect()->route('categoria.index');
     }
 
     /**
@@ -55,9 +77,10 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        return view('admin.categoria.edit');
     }
 
     /**

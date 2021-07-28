@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProdutoController extends Controller
 {
+    protected $request;
+
+    public function __construct(Request $request){
+        
+        $this->request = $request;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,10 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        return view('admin.produtos');
+        $produtos = Produto::all();
+        return view('admin.produtos', [
+            'produtos' => $produtos,
+        ]);
     }
 
     /**
@@ -24,7 +35,10 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        $categoria = Categoria::all();
+        return view('admin.produtos.create', [
+            'categorias' => $categoria,
+        ]);
     }
 
     /**
@@ -35,7 +49,46 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasFile('foto')){
+            $filenameWithExt = $request->file('foto')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('foto')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'-'.time().'-'.$extension;
+            $path = $request->file('foto')->storeAs('public/img', $fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.png';
+        }
+
+        $data = $request->only([
+            'nome',
+            'valor',
+            'descricao',
+            'categoria_id'
+        ]);
+        
+        
+        $validator = Validator::make($data, [
+            'nome' => ['required', 'string', 'max:50' ],
+            'valor' => ['required', 'string'],
+            'descricao' => ['string', 'nullable'],
+            'foto' => $fileNameToStore,
+            'categoria_id' =>['string', 'nullable'],
+        ]);
+        
+        if($validator->fails()){
+            return redirect()->route('produtos.create')
+            ->withErrors($validator)->withInput();
+        }
+        
+        $produto = Produto::create([
+            'nome' => $data['nome'],
+            'valor' => $data['valor'],
+            'descricao' => $data['descricao'],
+            'foto' => $fileNameToStore,
+            'categoria' => $data['categoria']
+        ]);
+        
+        $produto->save();
     }
 
     /**
@@ -57,7 +110,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        echo "editando";
     }
 
     /**
@@ -80,6 +133,6 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        echo "excluindo";
     }
 }

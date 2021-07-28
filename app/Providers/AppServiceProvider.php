@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $pages = Page::all();
         foreach ($pages as $page) {
             $frontmenu[$page['slug']] = $page['title'];
+            
         }
 
 

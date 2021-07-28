@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        
-        return view('site.home');
+        $page = Page::all();
+        return view('site.home', [
+            'pages' => $page,
+        ]);
     }
 }

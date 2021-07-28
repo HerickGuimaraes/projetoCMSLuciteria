@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends RModel
 {
+    protected $table = 'categorias';
     
+    protected $fillable = [ 
+        'categoria'
+    ];
 }

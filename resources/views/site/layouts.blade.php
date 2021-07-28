@@ -178,8 +178,9 @@
 						<div id="navBlock" role="navigation">
                             <div id="injectHead"></div>
                             <div id="injectHead">
-                                <p aling="center">
-                                @yield('content_header1')
+                             <!-- @foreach($front_menu as $pagesubtitle => $pagesubtitulo)
+                                <p aling="center" value="{{$pagesubtitle}}">-->
+                                <!--{{$pagesubtitulo}}-->
                                 </p>
                                 <p>
                                     @yield('content_header2')
@@ -188,7 +189,7 @@
                                     @yield('content_header3')
                                 </p>
                             </div>
-							
+                           <!-- @endforeach-->
                             <nav class="main-nav" data-content-field="navigation">
 
                                 <ul>

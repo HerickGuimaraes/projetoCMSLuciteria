@@ -4,9 +4,9 @@
 
 @section('content_header')
 
-    <h1>Minas Paginas 
-        <a href="{{route('pages.create')}}"
-             class="btn btn-sm btn-success">Adicionar Pagina</a>
+    <h1>Minhas Categorias 
+        <a href="{{route('categoria.create')}}"
+             class="btn btn-sm btn-success">Criar Categoria</a>
     </h1>
 
 @endsection
@@ -23,16 +23,16 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($pages as $page)
+        
             <tr>
-                <td>{{$page->id}}</td>
-                <td>{{$page->title}}</td>
+                <td></td>
+                <td></td>
                 
                 <td>
-                    <a href="" target="_blanck"class="btn btn-sm btn-success">Ver</a>
-                    <a href="{{ route('pages.edit',['page' => $page->id])}}" class="btn btn-sm btn-info">Editar</a>
+                    
+                    <a href="" class="btn btn-sm btn-info">Editar</a>
                   
-                    <form class="d-inline" method="POST" action="{{ route('pages.destroy',['page' => $page->id])}}" onsubmit="return confirm('Tem certeza que deseja excluir ?')">
+                    <form class="d-inline" method="POST" action="" onsubmit="return confirm('Tem certeza que deseja excluir ?')">
                         @method('DELETE')
                         @csrf
                         <button class="btn btn-sm btn-danger">Excluir</button>
@@ -41,10 +41,10 @@
                 </td>
             </tr>
         </tbody>
-        @endforeach
+       
     </table>
     
     </div>
 </div>
-{{ $pages->links('pagination::bootstrap-4') }}
+
 @endsection
