@@ -5,7 +5,7 @@
 @section('content_header')
 
     <h1>Minhas Categorias 
-        <a href="{{route('categoria.create')}}"
+        <a href="{{route('categorias.create')}}"
              class="btn btn-sm btn-success">Criar Categoria</a>
     </h1>
 
@@ -22,17 +22,18 @@
             <th width="200px">Ações</th>
         </tr>
         </thead>
+        @foreach($categorias as $categoria)
         <tbody>
         
             <tr>
-                <td></td>
-                <td></td>
+                <td>{{$categoria->id}}</td>
+                <td>{{$categoria->categoria}}</td>
                 
                 <td>
                     
-                    <a href="" class="btn btn-sm btn-info">Editar</a>
+                    <a href="{{route('categorias.edit',['categoria' => $categoria->id])}}" class="btn btn-sm btn-info">Editar</a>
                   
-                    <form class="d-inline" method="POST" action="" onsubmit="return confirm('Tem certeza que deseja excluir ?')">
+                    <form class="d-inline" method="POST" action="{{route('categorias.destroy',['categoria' => $categoria->id])}}" onsubmit="return confirm('Tem certeza que deseja excluir ?')">
                         @method('DELETE')
                         @csrf
                         <button class="btn btn-sm btn-danger">Excluir</button>
@@ -41,7 +42,7 @@
                 </td>
             </tr>
         </tbody>
-       
+       @endforeach
     </table>
     
     </div>

@@ -254,28 +254,29 @@ return [
             //'label_color' => 'success',
         ],
         [
-            'text'        => 'Minhas paginas',
+            'text'        => 'Paginas',
             'url'         => 'painel/pages',
+            'icon'        => 'fas fa-fw fa-book',
+           
+        ],
+        [
+            'text'        => 'Categorias',
+            'url'         => 'painel/categorias',
             'icon'        => 'fas fa-fw fa-copy',
            
         ],
         [
-            'text'        => 'Meus Produtos',
+            'text'        => 'Produtos',
             'url'         => 'painel/produtos',
             'icon'        => 'far fa-fw fa-file',
             'can'         =>  'edit-users'
            
         ],
+        
         [
-            'text'        => 'Minhas Categorias',
-            'url'         => 'painel/categoria',
-            'icon'        => 'fas fa-fw fa-copy',
-           
-        ],
-        [
-            'text'        => 'Meus Usuarios',
+            'text'        => 'Usuarios',
             'url'         => 'painel/users',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa-fw fa-user',
             'can'         =>  'edit-users'
            
         ],

@@ -47,17 +47,18 @@ class CategoriaController extends Controller
             'categoria' => ['string']
         ]);
         if($validator->fails()){
-            return redirect()->route('categoria.index')
+            return redirect()->route('categorias.index')
             ->withErrors($validator)
             ->withInput();
         }
         
         $categorias = new Categoria;
-        $categorias->categoria->$data['categoria'];
+        $categorias->categoria = $data['categoria'];
         $categorias->save();
+        
 
 
-        return redirect()->route('categoria.index');
+        return redirect()->route('categorias.index');
     }
 
     /**
@@ -79,8 +80,9 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        $categoria = Categoria::find($id);
-        return view('admin.categoria.edit');
+        
+        $categorias = Categoria::find($id);
+        return view('admin.categoria.edit', ['categorias' => $categorias]);
     }
 
     /**
@@ -90,9 +92,32 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if($categoria){
+            $data = $request->only(['categoria']);
+            
+            $validator = Validator::make([
+            'categoria' => $data['categoria']
+            ],
+            ['categoria' => ['string']]);
+        
+            
+            if($validator->errors()){
+            return redirect()->route('categorias.edit',[
+                'categoria' => $id
+            ])
+            ->withErrors($validator)->withInput();
+            }
+            dd($validator);
+            $categoria->categoria = $data['categoria'];
+            
+            $categoria->save();
+        }
+        return redirect()->route('categorias.index');
+
+
     }
 
     /**
@@ -101,8 +126,11 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria->delete();
+
+        return redirect()->route('categorias.index');
     }
 }

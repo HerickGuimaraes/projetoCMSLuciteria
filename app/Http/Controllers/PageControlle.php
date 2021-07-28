@@ -123,8 +123,7 @@ class PageControlle extends Controller
             'title',
             'body',
             'subtitle',
-            'subtitle1',
-            'subtitle2',
+            
             ]);
             if($page['title'] !== $data['title']){
                 $data['slug'] = Str::slug($data['title'], '-');
@@ -132,8 +131,7 @@ class PageControlle extends Controller
                     'title'=>['required','string','max:100'],
                     'slug'=>['required', 'string', 'max:100', 'unique:pages'],
                     'subtitle' =>['string'],
-                    'subtitle1' =>['string'],
-                    'subtitle2' =>['string'],
+                    
                     'body'=>['string']
                 ]);
             }else{
@@ -141,8 +139,7 @@ class PageControlle extends Controller
                     'title' => ['required', 'string', 'max:100'],
                     'body' =>['string'],    
                     'subtitle' =>['string'],
-                    'subtitle1' =>['string'],
-                    'subtitle2' =>['string'],
+                    
             
                 ]);
             }
@@ -157,8 +154,7 @@ class PageControlle extends Controller
             $page->title = $data['title'];
             $page->body = $data['body'];
             $page->subtitle = $data['subtitle'];
-            $page->subtitle1 = $data['subtitle1'];
-            $page->subtitle2 = $data['subtitle2'];
+            
 
             if(!empty($data['slug'])){
                 $page->slug = $data['slug'];

@@ -21,13 +21,13 @@
     @endif
     <div class="card">
         <div class="card-body">
-            <form action="{{route('categoria.update',['categoria'=>$categorias->id])}}" method="POST"class="form-horizontal">
+            <form action="{{route('categorias.update',['categoria'=>$categorias->id])}}" method="POST"class="form-horizontal">
                 @method('PUT')
                 @csrf
                 <div class="form-group row">      
                     <label class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-8">
-                    <input type="text" name="title" value="{{$categorias->title}}" class="form-control" >
+                    <input type="text" name="categoria" value="{{$categorias->categoria}}" class="form-control" >
                  </div>           
                 </div>
                       

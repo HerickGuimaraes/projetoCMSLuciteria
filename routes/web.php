@@ -109,7 +109,7 @@ route::put('configuracoessalve', [SettingControler::class, 'save'])->name('confi
 
 Route::resource('produtos', ProdutoController::class);
 
-Route::resource('categoria', CategoriaController::class);
+Route::resource('categorias', CategoriaController::class);
 
 Route::resource('pages', PageControlle::class);
 });
