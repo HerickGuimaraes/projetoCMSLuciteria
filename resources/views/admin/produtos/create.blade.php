@@ -60,16 +60,12 @@
                 <div class="form-group row">
                     
                     <div class="col-sm-8">
-                    <input type="submit" name="Cadatro" class="btn btn-success" value="Criar">
+                    <input type="submit" name="Cadastro" class="btn btn-success" value="Criar">
                     </div>
                 </div>
             </form>
         </div>
     </div>
     
-    <script>
-            images_upload_url:'{{route('imageupload')}}',
-            images_upload_credentials:true,
-            convert_urls:false
-    </script>
+  
 @endsection

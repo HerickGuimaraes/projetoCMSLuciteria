@@ -13,7 +13,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-boddy">
+    <div class="card-body">
     <table class="table table-hover">
         <thead>
         <tr>
