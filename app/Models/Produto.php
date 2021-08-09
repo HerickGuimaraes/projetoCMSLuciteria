@@ -18,4 +18,7 @@ class Produto extends RModel
         'descricao',
         'categoria_id'
     ];
+    public function categoria(){
+        return $this->hasOne(Categoria::class,'categoria_id', 'id');
+    }
 }

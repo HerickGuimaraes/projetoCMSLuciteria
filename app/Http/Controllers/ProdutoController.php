@@ -58,21 +58,24 @@ class ProdutoController extends Controller
         }else{
             $fileNameToStore = 'noimage.png';
         }
-
+        
         $data = $request->only([
             'nome',
             'valor',
-            'descricao',
-            'categoria_id'
+            'descricao'
         ]);
-        
+        $categoria = Categoria::all();
+        $data['categoria'] = Produto::categoria([
+            'categoria_id' => $categoria->id,
+        ]);
+        dd($categoria);
         
         $validator = Validator::make($data, [
             'nome' => ['required', 'string', 'max:50' ],
             'valor' => ['required', 'string'],
             'descricao' => ['string', 'nullable'],
             'foto' => $fileNameToStore,
-            'categoria_id' =>['string', 'nullable'],
+            'categoria' =>$categoria
         ]);
         
         if($validator->fails()){

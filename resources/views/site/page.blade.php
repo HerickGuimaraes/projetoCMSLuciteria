@@ -3,14 +3,7 @@
 @section('title', $page['title'])
 
 @section('content_header1')
-Collecting elements is a fun way to learn about chemistry and nature in general.
-Anyone can start a collection of chemical elements as many are easily found even 
-right in your home. Ordinary pencil lead is actually carbon and, speaking of lead,
-this one can also be easily found as fishing line sinkers in any hardware store.
-Except sinkers are increasingly being made of bismuth instead as it's more friendly 
-to the environment. And the list goes on. Of the 92 naturally occurring elements 
-over 80 are collectible with probably half of those being relatively easy to find
-in more or less pure form.
+{!! $page['subtitle']!!}
 @endsection
 @section('content_header2')
 We are located in Washington State USA and with few exceptions, as noted,

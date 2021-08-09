@@ -12,4 +12,10 @@ class Categoria extends RModel
     protected $fillable = [ 
         'categoria'
     ];
+    public function produto(){
+        return $this->hasOne(Produto::class,'categoria_id', 'id');
+    }
+    public function pages(){
+        return $this->hasOne(Page::class,'categoria_id', 'id');
+    }
 }

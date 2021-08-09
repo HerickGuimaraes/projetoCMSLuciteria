@@ -36,6 +36,7 @@
                     <input type="text" class="form-control" name="valor" aria-label="Amount (to the nearest dollar)" placeholder="Valor">
                 </div>  
                 </div> 
+                
                 <div class="form-group row">       
                     
                     <div class="col-sm-10">
@@ -52,7 +53,7 @@
                         <select  placeholder="categorias" class="form-select">
                             <option selected>Escolha uma categoria</option>
                             @foreach($categorias as $cat)
-                            <option name="categoria_id">{{$cat->categoria}}</option>
+                            <option name="categoria">{{$cat->categoria}}</option>
                             @endforeach
                         </select>
                     </div>

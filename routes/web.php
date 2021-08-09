@@ -95,7 +95,7 @@ route::get('/login', [PainelController::class, 'login'])->name('login');
 route::post('/login', [PainelController::class, 'loginAction']);
 
 Route::match(['get' ,'post'],'/cadastro', [RegisterController::class, 'index'])->name('cadastro');
-Route::post('cadastro',[RegisterController::class, 'register']); 
+
 
 route::match(['get', 'post'], '/logout',[PainelController::class, 'logout']);   
 
