@@ -2,7 +2,6 @@
 
 @section('conteiner')
 <div class="product hentry author-rasiel-suarez post-type-store-item article-index-1 clear" id="thumb-one-of-each-set" data-item-id="5b7b159f4fa51a76f36fa852">
-    <a href="/elements-for-sale/one-of-each-set" >
         <div>
             <div class="product-image sqs-pinterest-image">
                 <div class="intrinsic">
@@ -12,21 +11,20 @@
                 </div>
             </div>
         </div>
-    </a>
     <div class="product-overlay">
         <div class="product-meta">
             <div class="product-title">
-                Camisa do Flamengo v1
+                Camisa do Flamengo 
             </div>
             <div class="product-price">
                 R$ 250,00
             </div>
-            <button type="button" class="btn btn-sm btn-secondary px-4 mx-4">Adicionar Item</button>
+            <button type="button" class="btn btn btn-secondary mx-5 px-5 ">Comprar</button>
         </div>
     </div>
 </div>
 <div class="product hentry author-rasiel-suarez post-type-store-item article-index-1 clear" id="thumb-one-of-each-set" data-item-id="5b7b159f4fa51a76f36fa852">
-    <a href="/elements-for-sale/one-of-each-set" >
+    
         <div>
             <div class="product-image sqs-pinterest-image">
                 <div class="intrinsic">
@@ -36,7 +34,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    
     <div class="product-overlay">
         <div class="product-meta">
             <div class="product-title">
@@ -45,12 +43,12 @@
             <div class="product-price">
                 R$ 250,00
             </div>
-            <button type="button" class="btn btn-sm btn-secondary px-4 mx-4">Adicionar Item</button>
+            <button type="button" class="btn btn-sm btn-secondary px-5 mx-5">Comprar</button>
         </div>
     </div>
 </div>
 <div class="product hentry author-rasiel-suarez post-type-store-item article-index-1 clear" id="thumb-one-of-each-set" data-item-id="5b7b159f4fa51a76f36fa852">
-    <a href="/elements-for-sale/one-of-each-set" >
+    
         <div>
             <div class="product-image sqs-pinterest-image">
                 <div class="intrinsic">
@@ -60,7 +58,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    
     <div class="product-overlay">
         <div class="product-meta">
             <div class="product-title">
@@ -74,7 +72,7 @@
     </div>
 </div>
 <div class="product hentry author-rasiel-suarez post-type-store-item article-index-1 clear" id="thumb-one-of-each-set" data-item-id="5b7b159f4fa51a76f36fa852">
-    <a href="/elements-for-sale/one-of-each-set" >
+    
         <div>
             <div class="product-image sqs-pinterest-image">
                 <div class="intrinsic">
@@ -84,7 +82,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    
     <div class="product-overlay">
         <div class="product-meta">
             <div class="product-title">
@@ -98,7 +96,7 @@
     </div>
 </div>
 <div class="product hentry author-rasiel-suarez post-type-store-item article-index-1 clear" id="thumb-one-of-each-set" data-item-id="5b7b159f4fa51a76f36fa852">
-    <a href="/elements-for-sale/one-of-each-set" >
+    
         <div>
             <div class="product-image sqs-pinterest-image">
                 <div class="intrinsic">
@@ -108,7 +106,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    
     <div class="product-overlay">
         <div class="product-meta">
             <div class="product-title">
@@ -122,7 +120,7 @@
     </div>
 </div>
 <div class="product hentry author-rasiel-suarez post-type-store-item article-index-1 clear" id="thumb-one-of-each-set" data-item-id="5b7b159f4fa51a76f36fa852">
-    <a href="/elements-for-sale/one-of-each-set" >
+    
         <div>
             <div class="product-image sqs-pinterest-image">
                 <div class="intrinsic">
@@ -132,7 +130,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    
     <div class="product-overlay">
         <div class="product-meta">
             <div class="product-title">
