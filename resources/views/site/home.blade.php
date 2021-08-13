@@ -13,5 +13,5 @@
 @endsection
 @endforeach
 @section('conteiner')
-    asd
+    
 @endsection

@@ -18,7 +18,29 @@ class InsertProducts extends Migration
         $cat = new Categoria(['categoria' => 'geral']);
         $cat->save();
 
-        $prod = new Produto(['nome' => '', 'valor'=>20, 'foto'=> '','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $cat1 = new Categoria(['categoria' => 'importado']);
+        $cat1->save();
+
+        $cat2 = new Categoria(['categoria' => 'nacional']);
+        $cat2->save();
+
+        $prod = new Produto(['nome' => 'Camisa Flamengo v1', 'valor'=>250, 'foto'=> 'img/produto1.jpg','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $prod->save();
+
+        $prod2 = new Produto(['nome' => 'Camisa Flamengo v2', 'valor'=>89.99, 'foto'=> 'img/produto2.jpg','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $prod2->save();
+
+        $prod3 = new Produto(['nome' => 'Camisa Flamengo v3', 'valor'=>150, 'foto'=> 'img/produto3.jpg','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $prod3->save();
+
+        $prod4 = new Produto(['nome' => 'Camisa Flamengo treino', 'valor'=>75.99, 'foto'=> 'img/produto4.jpg','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $prod4->save();
+
+        $prod5 = new Produto(['nome' => 'Tenis Mizzubo', 'valor'=>350, 'foto'=> 'img/produto5.jpg','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $prod5->save();
+
+        $prod6 = new Produto(['nome' => 'Camisa Real Madrid v2', 'valor'=>100, 'foto'=> 'img/produto6.jpg','descricao'=>'', 'categoria_id'=>$cat->id]);
+        $prod6->save();
     }
 
     /**

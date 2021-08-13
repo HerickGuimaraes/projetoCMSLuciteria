@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Categoria;
 use App\Models\Page;
 use App\Models\Setting;
 use Illuminate\Support\Facades\View;
@@ -26,13 +27,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //menu
+       //menu
         $frontmenu = [
             '/' => 'Home'
         ];
+        $categorias = Categoria::all();
         $pages = Page::all();
         foreach ($pages as $page) {
             $frontmenu[$page['slug']] = $page['title'];
+            foreach ($categorias as $categoria){
+                $page['title'] = $categoria['categoria'];
+            }
             
         }
 
