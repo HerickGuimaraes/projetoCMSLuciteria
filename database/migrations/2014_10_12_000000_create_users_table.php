@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments("id");
             $table->string('nome');
             $table->string('email')->unique();
-            $table->string('cpf', 11)->unique();
+            $table->string('cpf', 14)->unique();
             $table->string('password');
             $table->tinyInteger('admin')->default(0);
             $table->rememberToken();

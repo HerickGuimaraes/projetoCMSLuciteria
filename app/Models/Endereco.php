@@ -10,6 +10,8 @@ class Endereco extends RModel
     use HasFactory;
     public $timestamps = false;
 
+    protected $table = 'enderecos';
+
     protected $fillable = [
         'logadouro',
         'numero',

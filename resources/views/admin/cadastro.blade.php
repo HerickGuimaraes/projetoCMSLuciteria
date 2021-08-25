@@ -9,6 +9,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    
+    <script type="text/javascript">
+        function formatar_mascara(src, mascara) {
+         var campo = src.value.length;
+         var saida = mascara.substring(0,1);
+         var texto = mascara.substring(campo);
+         if(texto.substring(0,1) != saida) {
+         src.value += texto.substring(0,1);
+         }
+        }
+        </script>
 </head>
 <body>
     <div class="container-fluid justify-content-center">
@@ -19,7 +29,7 @@
             @foreach($front_menu as $menuslug=>$menutitle)
             
             <li class="nav-item">
-                <a class="nav-link" href="{{$menuslug}}" >{{$menutitle}}</a>
+                <a class="nav-link link-secondary" href="{{$menuslug}}" >{{$menutitle}}</a>
             </li>
             @endforeach
         </tr>  
@@ -27,16 +37,19 @@
     
 <div class="container">
     <div class="row">
+        @if($message = Session::get("ERROR"))
+
+        @endif
     <h2>Cadastro</h2><br><br>
 
-    <form action="{{''}}" method="post" class="form-row">
+    <form action="{{route('cadastro')}}" method="post" class="form-row">
         @csrf
         <div class="row">
         <div class="from-group col-md-8 mb-4">
             <input type="text" name="nome" class="form-control" placeholder="Nome">
         </div>
         <div class="from-group col-md-4 mb-4">
-            <input type="number" name="cpf" class="form-control"  placeholder="CPF" onkeydown="javascript: fMasc(this, mCPF);">
+            <input name="cpf" method="post" type="text" class="form-control" maxlength="14" size="40" onkeypress="formatar_mascara(this,'###.###.###-##')" placeholder="CPF">
         </div>
         <div class="from-group col-md-6 mb-4">
             <input type="email" name="email" class="form-control" placeholder="E-mail">
@@ -62,7 +75,7 @@
             <input type="text" name="estado" class="form-control" placeholder="Estado">
         </div>
         <div class="form-group col-md-3  mb-4">
-            <input type="CEP" name="cep" class="form-control" placeholder="CEP">
+            <input name="cep" method="post" type="text" class="form-control" maxlength="11" size="40" onkeypress="formatar_mascara(this,'##.###-###')" placeholder="CEP">
         </div>
         </div>
         

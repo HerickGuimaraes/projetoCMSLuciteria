@@ -42,6 +42,8 @@ route::post('/login', [PainelController::class, 'loginAction']);
 
 Route::match(['get' ,'post'],'/cadastro', [ClienteController::class, 'cadastrar'])->name('cadastrar');
 
+Route::match(['get' ,'post'],'/cadastrar/cliente', [ClienteController::class, 'cadastrarCliente'])->name('cadastro');
+
 
 route::match(['get', 'post'], '/logout',[PainelController::class, 'logout']);   
 
