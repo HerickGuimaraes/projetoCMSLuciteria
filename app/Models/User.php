@@ -51,4 +51,11 @@ class User extends Authenticatable
     public function endereco(){
         return $this->hasMAny(Endereco::class,'user_id', 'id');
     }
+    
+    public function setCpfAttribute($cpf){
+        $value = preg_replace("/[^0-9]/", "", $cpf);
+        $this->attributes["cpf"] = $value;
+
+    }
+    
 }

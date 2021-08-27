@@ -9,6 +9,8 @@ class Itens_Pedido extends RModel
 {
     use HasFactory;
 
+    protected $table = 'itens_pedidos';
+
     protected $fillable = [
         'quantidade',
         'valor',

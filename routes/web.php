@@ -68,6 +68,8 @@ Route::match(['get', 'post'], '/carrinho',[ProdutoControllerSite::class, 'carrin
 
 Route::match(['get', 'post'], '/{idproduto}/carrinho/adc',[ProdutoControllerSite::class, 'adicionarCarrinho'])->name('adicionar_carrinho');
 
+Route::post('/carrinho/finalizar',[ProdutoControllerSite::class, 'finalizar'])->name('finalizar_carrinho');
+
 Route::match(['get', 'post'], '/{indice}/carrinho/exc',[ProdutoControllerSite::class, 'excluirCarrinho'])->name('excluir_carrinho');
 
 route::fallback([PageController::class, 'index']);

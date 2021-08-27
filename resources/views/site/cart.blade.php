@@ -25,6 +25,7 @@
         </thead>
       
         <tbody>
+          @php $total = 0; @endphp
           @foreach ($cart as $indice => $item)
             <tr>
               <th class="text-center"><img src="{{asset($item->foto)}}" height="65px"></th>
@@ -34,14 +35,26 @@
                 <a href="{{route('excluir_carrinho',['indice'=>$indice])}}" class="btn btn-outline-danger"><i class="bi bi-x-circle"></i></a>
               </th>
             </tr>
+          @php $total += $item->valor; @endphp
           @endforeach
         </tbody>
+      </table>
+    </div>
+      <table class="table table-hover table-striped table-bordered border-black align-middle">
         <tfoot>
-          <tr class="table-secondary">
-            <th>Total</th>
+          <tr>
+            <th class="text-center table-secondary">Total:</th>
+            <td class=""> R$ {{ $total }}</td> 
           </tr>  
         </tfoot>
       </table>
+     
+    <br>
+    <div class="justify-content-end">
+      <form method="post" action="{{ route('finalizar_carrinho')}}">
+        @csrf
+        <input type="submit" value="Fnalizar Compra" class="btn btn-lg btn-success">
+      </form>
     </div>
   
 

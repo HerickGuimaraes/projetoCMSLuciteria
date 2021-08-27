@@ -38,7 +38,14 @@
 <div class="container">
     <div class="row">
         @if($message = Session::get("ERROR"))
-
+            <div class="col-12">
+                <div class="alert alert-danger">{{ $message }}</div>
+            </div>
+        @endif
+        @if($message = Session::get("success"))
+        <div class="col-12">
+            <div class="alert alert-success">{{ $message }}</div>
+        </div>
         @endif
     <h2>Cadastro</h2><br><br>
 

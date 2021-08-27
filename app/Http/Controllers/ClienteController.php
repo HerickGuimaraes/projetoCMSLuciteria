@@ -6,7 +6,7 @@ use App\Models\Endereco;
 use App\Models\User;
 use App\Service\ClienteService;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
@@ -21,6 +21,10 @@ class ClienteController extends Controller
         $values = $request->all();
         $usuario = new User();
         $usuario->fill($values);
+
+        $senha = $request->input("password", "");
+        $usuario->password = Hash::make($senha);
+        
 
         $enderecos = new Endereco($values);
         
